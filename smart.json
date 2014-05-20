@@ -1,0 +1,8 @@
+{
+	"name": "xero",
+	"description": "Xero login service for Meteor",
+	"homepage": "https://github.com/axwaxw/xero",
+	"author": "Alex Webster",
+	"version": "0.1.0",
+	"git": "https://github.com/axwaxw/xero.git"
+}

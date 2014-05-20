@@ -10,12 +10,13 @@ xero.requestCredential = function (options, credentialRequestCompleteCallback) {
     credentialRequestCompleteCallback = options;
     options = {};
   }
+  
+  var config = ServiceConfiguration.configurations.findOne({
+    service: 'xero'
+  });
 
-  var config = ServiceConfiguration.configurations.findOne({service: 'xero'});
-
-	
   if (!config) {
-	console.log("no config");
+    console.log("no config");
     credentialRequestCompleteCallback && credentialRequestCompleteCallback(new ServiceConfiguration.ConfigError("Service not configured"));
     return;
   }
@@ -31,10 +32,8 @@ xero.requestCredential = function (options, credentialRequestCompleteCallback) {
 
   // url to app, enters "step 1" as described in
   // packages/accounts-oauth1-helper/oauth1_server.js
-  var url = '/_oauth/xero/?requestTokenAndRedirect='
-        + encodeURIComponent(callbackUrl)
-	        + '&state=' + credentialToken;
+  var url = '/_oauth/xero/?requestTokenAndRedirect=' + encodeURIComponent(callbackUrl) + '&state=' + credentialToken;
 
-		
+
   Oauth.initiateLogin(credentialToken, url, credentialRequestCompleteCallback);
 };

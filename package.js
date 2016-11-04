@@ -1,25 +1,24 @@
+/* global Package Npm */
+
+// based on code from https://github.com/axwaxw/xero
 Package.describe({
-  summary: "Xero OAuth flow",
-  // internal for now. Should be external when it has a richer API to do
-  // actual API things with the service, not just handle the OAuth flow.
-  internal: true
+  summary: 'Xero API',
+  version: '0.1.1',
+  name: 'andylash:xero',
+  git: 'https://github.com/Opstarts/xero.git',
 });
 
+
 Package.on_use(function(api) {
-  api.use('http', ['client', 'server']);
   api.use('templating', 'client');
   api.use('oauth1', ['client', 'server']);
   api.use('oauth', ['client', 'server']);
+  api.use('ecmascript', ['client', 'server']);
   api.use('random', 'client');
-  api.use('underscore', 'server');
   api.use('service-configuration', ['client', 'server']);
 
-  api.export('xero');
+  api.add_files(['xero_configure.html', 'xero_configure.js'], 'client');
 
-  api.add_files(
-    ['xero_configure.html', 'xero_configure.js'],
-    'client');
-
-  api.add_files('xero_server.js', 'server');
-  api.add_files('xero_client.js', 'client');
+  api.mainModule('xero_server.js', 'server');
+  api.mainModule('xero_client.js', 'client');
 });

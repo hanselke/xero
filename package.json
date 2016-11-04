@@ -1,0 +1,12 @@
+{
+  "name": "meteor-xero",
+  "version": "1.0.0",
+  "description": "Xero API for meteor apps",
+  "repository": "git@github.com:Opstarts/xero.git",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "3.10.1",
+    "oauth": "0.9.14"
+  }
+}

@@ -3,7 +3,7 @@
 // based on code from https://github.com/axwaxw/xero
 Package.describe({
   summary: 'Xero API',
-  version: '0.1.1',
+  version: '0.1.2',
   name: 'andylash:xero',
   git: 'https://github.com/Opstarts/xero.git',
   documentation: null,

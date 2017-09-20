@@ -10,6 +10,7 @@ const Xero = {};
 //   completion. Takes one argument, credentialToken on success, or Error on
 //   error.
 Xero.requestCredential = function(opts, callback) {
+  console.log("xero.requestcredential called with opts: " + opts + "callback: " + callback)
   // support both (options, callback) and (callback).
   let options = opts;
   let credentialRequestCompleteCallback = callback;
